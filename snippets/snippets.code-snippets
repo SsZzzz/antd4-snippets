@@ -579,5 +579,76 @@
   "BackTop": {
     "prefix": "antdBackTop",
     "body": ["<BackTop />"]
+  },
+  "dva file": {
+    "prefix": "!dva",
+    "body": [
+      "import { cloneDeep } from 'lodash-es';",
+      "",
+      "const state = {};",
+      "",
+      "export default {",
+      "  namespace: '${1:namespace}',",
+      "  subscriptions: {",
+      "    setup({ dispatch, history }) {",
+      "      history.listen(({ pathname }) => {",
+      "        if (pathname === '/${2:pathname}') {",
+      "          dispatch({ type: 'reset' });",
+      "        }",
+      "      });",
+      "    },",
+      "  },",
+      "  state: cloneDeep(state),",
+      "  effects: {},",
+      "  reducers: {",
+      "    save(state, { payload }) {",
+      "      return {",
+      "        ...state,",
+      "        ...payload,",
+      "      };",
+      "    },",
+      "    reset() {",
+      "      return cloneDeep(state);",
+      "    },",
+      "  },",
+      "};"
+    ]
+  },
+  "dvaEffect": {
+    "prefix": "dvaEffect",
+    "body": [
+      "*${1:serviceName}({ payload }, { call, put }) {",
+      "  const { data } = yield call(service.${1:serviceName}, payload);",
+      "  yield put({ type: 'save', payload: { ${2:key}: data } });",
+      "},"
+    ]
+  },
+  "dvaEffectQuery": {
+    "prefix": "dvaEffectQuery",
+    "body": [
+      "*query({ payload = {} }, { select, call, put }) {",
+      "  const { searchParams } = yield select((state) => state.${1:name});",
+      "  const newSearchParams = { ...searchParams, ...payload };",
+      "  const { data } = yield call(service.query, newSearchParams);",
+      "  const { records, total } = data || {};",
+      "  yield put({ type: 'save', payload: { records, total, searchParams: newSearchParams } });",
+      "}"
+    ]
+  },
+  "useDispatch": {
+    "prefix": "useDispatch",
+    "body": ["const dispatch = useDispatch();"]
+  },
+  "useSelector": {
+    "prefix": "useSelector",
+    "body": ["const { $2 } = useSelector((state) => state.$1);"]
+  },
+  "useSelectorLoading": {
+    "prefix": "useSelectorLoading",
+    "body": ["const loading = useSelector((state) => state.loading.effects['$1']);"]
+  },
+  "dispatch": {
+    "prefix": "dispatch",
+    "body": ["dispatch({ type: '$1', payload: $2 });"]
   }
 }
