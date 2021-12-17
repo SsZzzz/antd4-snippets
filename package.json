@@ -1,8 +1,8 @@
 {
   "name": "antd4-snippets",
   "displayName": "antd4 snippets",
-  "description": "antd4 snippets",
-  "version": "0.0.1",
+  "description": "antd4 and dva snippets",
+  "version": "1.0.0",
   "publisher": "mendia.su",
   "engines": {
     "vscode": "^1.63.0"

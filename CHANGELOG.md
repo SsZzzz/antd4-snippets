@@ -1,9 +1,4 @@
 # Change Log
 
-All notable changes to the "antd4-snippets" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## 1.0.0
+提供大部分的 antd 组件以及 dva 的代码片段.
