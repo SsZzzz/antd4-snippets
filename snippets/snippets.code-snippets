@@ -1,1 +1,583 @@
-{}
+{
+  "Button": {
+    "prefix": "antdButton",
+    "body": ["<Button type=\"${1:primary}\">$2</Button>"]
+  },
+  "Grid": {
+    "prefix": "antdRow",
+    "body": [
+      "<Row gutter={16}>",
+      "  <Col span={6}></Col>",
+      "  <Col span={6}></Col>",
+      "  <Col span={6}></Col>",
+      "  <Col span={6}></Col>",
+      "</Row>"
+    ]
+  },
+  "Space": {
+    "prefix": "antdSpace",
+    "body": ["<Space>$1</Space>"]
+  },
+  "Affix": {
+    "prefix": "antdAffix",
+    "body": ["<Affix offsetTop={${1:10}}>$2</Affix>"]
+  },
+  "Breadcrumb": {
+    "prefix": "antdBreadcrumb",
+    "body": [
+      "<Breadcrumb>",
+      "  <Breadcrumb.Item>Home</Breadcrumb.Item>",
+      "  <Breadcrumb.Item>",
+      "    <a href=\"\">Application Center</a>",
+      "  </Breadcrumb.Item>",
+      "</Breadcrumb>"
+    ]
+  },
+  "Dropdown": {
+    "prefix": "antdDropdown",
+    "body": [
+      "function handleMenuClick({ key }) {",
+      "  console.log(`Click on item ${key}`);",
+      "}",
+      "const menu = (",
+      "  <Menu onClick={handleMenuClick}>",
+      "    <Menu.Item key=\"0\">item</Menu.Item>",
+      "  </Menu>",
+      ");",
+      "<Dropdown overlay={menu}>HoverMe</Dropdown>"
+    ]
+  },
+  "Menu": {
+    "prefix": "antdMenu",
+    "body": [
+      "function handleMenuSelect({ key }) {",
+      "  console.log(`Select on item ${key}`);",
+      "}",
+      "<Menu",
+      "  style={{ width: 256 }}",
+      "  mode=\"inline\"",
+      "  onSelect={handleMenuSelect}",
+      ">",
+      "  <SubMenu key=\"sub1\" icon={<AppstoreOutlined />} title=\"NavigationOne\">",
+      "    <Menu.Item key=\"5\">Option 5</Menu.Item>",
+      "    <SubMenu key=\"sub3\" title=\"Submenu\">",
+      "      <Menu.Item key=\"7\">Option 7</Menu.Item>",
+      "    </SubMenu>",
+      "  </SubMenu>",
+      "</Menu>"
+    ]
+  },
+  "PageHeader": {
+    "prefix": "antdPageHeader",
+    "body": [
+      "<PageHeader",
+      "  onBack={() => null}",
+      "  title=\"${1:Title}\"",
+      "  subTitle=\"${2:This is a subtitle}\"",
+      "/>"
+    ]
+  },
+  "Pagination": {
+    "prefix": "antdPagination",
+    "body": [
+      "function handlePageChange(page, pageSize) {",
+      "  console.log(page, pageSize);",
+      "}",
+      "<Pagination",
+      "  className={styles.pagination}",
+      "  current={current}",
+      "  total={total}",
+      "  pageSize={pageSize}",
+      "  onChange={handlePageChange}",
+      "  showTotal={total => `共 ${total} 条`}",
+      "  showQuickJumper",
+      "  showSizeChanger",
+      "/>"
+    ]
+  },
+  "Steps": {
+    "prefix": "antdSteps",
+    "body": [
+      "const { Step } = Steps;",
+      "<Steps current={1}>",
+      "  <Step title=\"Finished\" description=\"This is a description.\" />",
+      "  <Step title=\"In Progress\" subTitle=\"Right 00:00:08\" description=\"This is a description.\" />",
+      "  <Step title=\"Waiting\" description=\"This is a description.\" />",
+      "</Steps>"
+    ]
+  },
+  "AutoComplete": {
+    "prefix": "antdAutoComplete",
+    "body": ["<AutoComplete options={options} placeholder=\"${1:placeholder}\" />"]
+  },
+  "Cascader": {
+    "prefix": "antdCascader",
+    "body": [
+      "function handleCascaderChange(value) {",
+      "  console.log(value);",
+      "}",
+      "<Cascader options={options} onChange={handleCascaderChange} placeholder=\"${1:placeholder}\" />"
+    ]
+  },
+  "Checkbox": {
+    "prefix": "antdCheckbox",
+    "body": [
+      "function handleCheckboxChange(e) {",
+      "  console.log(`checked = ${e.target.checked}`);",
+      "}",
+      "<Checkbox onChange={handleCheckboxChange}>${1:Checkbox}</Checkbox>"
+    ]
+  },
+  "CheckboxAll": {
+    "prefix": "antdCheckboxAll",
+    "body": [
+      "const options = ['Apple', 'Pear', 'Orange'];",
+      "",
+      "const [checkedList, setCheckedList] = useState([]);",
+      "",
+      "function handleCheckAllChange(e) {",
+      "  setCheckedList(e.target.checked ? options : []);",
+      "}",
+      "",
+      "<Checkbox",
+      "  indeterminate={checkedList.length > 0 && checkedList.length < options.length}",
+      "  onChange={handleCheckAllChange}",
+      "  checked={checkedList.length === options.length}",
+      ">",
+      "  全选",
+      "</Checkbox>",
+      "<Checkbox.Group options={options} value={checkedList} onChange={setCheckedList} />"
+    ]
+  },
+  "CheckboxGroup": {
+    "prefix": "antdCheckboxGroup",
+    "body": [
+      "function handleCheckboxChange(e) {",
+      "  console.log(`checked = ${e.target.checked}`);",
+      "}",
+      "<Checkbox.Group options={options} onChange={handleCheckboxChange} />"
+    ]
+  },
+  "CheckboxGroupCustom": {
+    "prefix": "antdCheckboxGroupCustom",
+    "body": [
+      "function handleCheckboxChange(e) {",
+      "  console.log(`checked = ${e.target.checked}`);",
+      "}",
+      "<Checkbox.Group onChange={handleCheckboxChange}>",
+      "  <Row>",
+      "    <Col span={12}>",
+      "      <Checkbox value=\"A\">A</Checkbox>",
+      "    </Col>",
+      "    <Col span={12}>",
+      "      <Checkbox value=\"B\">B</Checkbox>",
+      "    </Col>",
+      "  </Row>",
+      "</Checkbox.Group>"
+    ]
+  },
+  "DatePicker": {
+    "prefix": "antdDatePicker",
+    "body": [
+      "function handleDatePickerChange(date, dateString) {",
+      "  console.log(date, dateString);",
+      "}",
+      "<DatePicker onChange={handleDatePickerChange} />"
+    ]
+  },
+  "RangePicker": {
+    "prefix": "antdRangePicker",
+    "body": [
+      "function handleRangePickerChange(date, dateString) {",
+      "  console.log(date, dateString);",
+      "}",
+      "<RangePicker onChange={handleRangePickerChange} />"
+    ]
+  },
+  "Form": {
+    "prefix": "antdForm",
+    "body": [
+      "const [form] = Form.useForm();",
+      "",
+      "function onFinish(values) {",
+      "  console.log(values);",
+      "}",
+      "",
+      "<Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} form={form} name=\"form\" onFinish={onFinish}>",
+      "  <Form.Item name=\"a\" label=\"A\" rules={[{ required: true }]}>",
+      "    <Input placeholder=\"placeholder\" />",
+      "  </Form.Item>",
+      "  <Form.Item wrapperCol={{ offset: 8, span: 16 }}>",
+      "    <Button type=\"primary\" htmlType=\"submit\">",
+      "      Submit",
+      "    </Button>",
+      "  </Form.Item>",
+      "</Form>"
+    ]
+  },
+  "Input": {
+    "prefix": "antdInput",
+    "body": [
+      "function handleInputChange(e) {",
+      "  console.log(e.target.value);",
+      "}",
+      "<Input placeholder=\"${1:placeholder}\" onChange={handleInputChange} />"
+    ]
+  },
+  "InputNumber": {
+    "prefix": "antdInputNumber",
+    "body": [
+      "function handleInputNumberChange(value) {",
+      "  console.log('changed', value);",
+      "}",
+      "<InputNumber min={1} max={10} onChange={handleInputNumberChange} />"
+    ]
+  },
+  "RadioGroup": {
+    "prefix": "antdRadioGroup",
+    "body": [
+      "function handleRadioChange(e) {",
+      "  console.log(e.target.value);",
+      "}",
+      "<Radio.Group options={options} onChange={handleRadioChange} />"
+    ]
+  },
+  "Rate": {
+    "prefix": "antdRate",
+    "body": ["function handleRateChange(value) {", "  console.log(value);", "}", "<Rate onChange={handleRateChange} />"]
+  },
+  "Select": {
+    "prefix": "antdSelect",
+    "body": [
+      "function handleSelectChange(value) {",
+      "  console.log(value);",
+      "}",
+      "<Select style={{ width: 100 }} placeholder=\"${1:placeholder}\" options={options} onChange={handleSelectChange} />"
+    ]
+  },
+  "Slider": {
+    "prefix": "antdSlider",
+    "body": ["<Slider />"]
+  },
+  "Switch": {
+    "prefix": "antdSwitch",
+    "body": [
+      "function handleSwitchChange(checked) {",
+      "  console.log(`switch to ${checked}`);",
+      "}",
+      "<Switch onChange={handleSwitchChange} />"
+    ]
+  },
+  "TimePicker": {
+    "prefix": "antdTimePicker",
+    "body": [
+      "function handleTimePickerChange(time, timeString) {",
+      "  console.log(time, timeString);",
+      "}",
+      "<TimePicker onChange={handleTimePickerChange} />"
+    ]
+  },
+  "TreeSelect": {
+    "prefix": "antdTreeSelect",
+    "body": [
+      "function handleTreeSelectChange(value) {",
+      "  console.log(value);",
+      "}",
+      "<TreeSelect",
+      "  style={{ width: 300 }}",
+      "  treeData={treeData}",
+      "  placeholder=\"placeholder\"",
+      "  onChange={handleTreeSelectChange}",
+      "/>"
+    ]
+  },
+  "Upload": {
+    "prefix": "antdUpload",
+    "body": [
+      "function handleUploadChange(info) {",
+      "  if (info.file.status === 'done') {",
+      "    console.log(`${info.file.name} file uploaded successfully`);",
+      "  } else if (info.file.status === 'error') {",
+      "    console.log(`${info.file.name} file upload failed.`);",
+      "  }",
+      "}",
+      "<Upload name=\"file\" action=\"https://www.mocky.io/v2/5cc8019d300000980a055e76\" onChange={handleUploadChange}>",
+      "  <Button>Click to Upload</Button>",
+      "</Upload>"
+    ]
+  },
+  "Avatar": {
+    "prefix": "antdAvatar",
+    "body": ["<Avatar size={64} icon={<UserOutlined />} />"]
+  },
+  "Badge": {
+    "prefix": "antdBadge",
+    "body": ["<Badge count={5}>", "  <Avatar shape=\"square\" size=\"large\" />", "</Badge>"]
+  },
+  "Calendar": {
+    "prefix": "antdCalendar",
+    "body": [
+      "function handleCalendarChange(date) {",
+      "  console.log(date);",
+      "}",
+      "<Calendar onChange={handleCalendarChange} />"
+    ]
+  },
+  "Card": {
+    "prefix": "antdCard",
+    "body": [
+      "<Card title=\"${1:Default size card}\" extra={<a href=\"#\">${2:More}</a>} style={{ width: ${3:300} }}>",
+      "  <p>Card content</p>",
+      "  <p>Card content</p>",
+      "  <p>Card content</p>",
+      "</Card>"
+    ]
+  },
+  "Carousel": {
+    "prefix": "antdCarousel",
+    "body": [
+      "<Carousel>",
+      "  <div>",
+      "    <h3>1</h3>",
+      "  </div>",
+      "  <div>",
+      "    <h3>2</h3>",
+      "  </div>",
+      "</Carousel>"
+    ]
+  },
+  "Collapse": {
+    "prefix": "antdCollapse",
+    "body": [
+      "<Collapse>",
+      "  <Panel header=\"This is panel header 1\" key=\"1\">",
+      "    <p>content</p>",
+      "  </Panel>",
+      "  <Panel header=\"This is panel header 2\" key=\"2\">",
+      "    <p>content</p>",
+      "  </Panel>",
+      "</Collapse>"
+    ]
+  },
+  "Descriptions": {
+    "prefix": "antdDescriptions",
+    "body": [
+      "<Descriptions title=\"${1:User Info}\" bordered>",
+      "  <Descriptions.Item label=\"Product\">Cloud Database</Descriptions.Item>",
+      "  <Descriptions.Item label=\"Usage Time\" span={2}>",
+      "    2019-04-24 18:00:00",
+      "  </Descriptions.Item>",
+      "</Descriptions>"
+    ]
+  },
+  "Empty": {
+    "prefix": "antdEmpty",
+    "body": ["<Empty />"]
+  },
+  "Image": {
+    "prefix": "antdImage",
+    "body": [
+      "<Image",
+      "  width={${1:200}}",
+      "  src=\"${2:https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png}\"",
+      "/>"
+    ]
+  },
+  "Popover": {
+    "prefix": "antdPopover",
+    "body": [
+      "<Popover",
+      "  content={",
+      "    <div>",
+      "      <p>Content</p>",
+      "      <p>Content</p>",
+      "    </div>",
+      "  }",
+      "  title=\"Title\"",
+      ">",
+      "  <Button type=\"primary\">Hover me</Button>",
+      "</Popover>"
+    ]
+  },
+  "Statistic": {
+    "prefix": "antdStatistic",
+    "body": [
+      "<Statistic",
+      "  title=\"${1:Active}\"",
+      "  value={${2:11.282}}",
+      "  precision={2}",
+      "  prefix={<ArrowUpOutlined />}",
+      "  suffix=\"%\"",
+      "/>"
+    ]
+  },
+  "Table": {
+    "prefix": "antdTable",
+    "body": [
+      "const columns = [",
+      "  {",
+      "    title: '',",
+      "    dataIndex: '',",
+      "  },",
+      "];",
+      "",
+      "function handleTableChange(pagination, filters, sorter) {}",
+      "",
+      "<Table",
+      "  rowKey=\"id\"",
+      "  dataSource={[]}",
+      "  columns={columns}",
+      "  loading={loading}",
+      "  onChange={handleTableChange}",
+      "  pagination={{",
+      "    current: current,",
+      "    pageSize: pageSize,",
+      "    total: total,",
+      "    showSizeChanger: true,",
+      "    showQuickJumper: true,",
+      "    showTotal: (total) => `共 ${total} 条`,",
+      "  }}",
+      "/>"
+    ]
+  },
+  "Tabs": {
+    "prefix": "antdTabs",
+    "body": [
+      "const { TabPane } = Tabs;",
+      "",
+      "<Tabs>",
+      "  <TabPane tab=\"${!:Tab 1}\" key=\"1\">",
+      "    Content of Tab Pane 1",
+      "  </TabPane>",
+      "  <TabPane tab=\"${2:Tab 2}\" key=\"2\">",
+      "    Content of Tab Pane 2",
+      "  </TabPane>",
+      "</Tabs>"
+    ]
+  },
+  "Tag": {
+    "prefix": "antdTag",
+    "body": ["<Tag color=\"${2:magenta}\">${1:magenta}</Tag>"]
+  },
+  "Timeline": {
+    "prefix": "antdTimeline",
+    "body": [
+      "<Timeline>",
+      "  <Timeline.Item>${1:Create a services site 2015-09-01}</Timeline.Item>",
+      "  <Timeline.Item>${2:Solve initial network problems 2015-09-01}</Timeline.Item>",
+      "</Timeline>"
+    ]
+  },
+  "Tooltip": {
+    "prefix": "antdTooltip",
+    "body": [
+      "<Tooltip title=\"${2:prompt text}\">",
+      "  <span>${1:Tooltip will show on mouse enter.}</span>",
+      "</Tooltip>"
+    ]
+  },
+  "Tree": {
+    "prefix": "antdTree",
+    "body": [
+      "function handleTreeCheck(checkedKeys, info) {",
+      "  console.log(checkedKeys, info);",
+      "}",
+      "<Tree checkable onCheck={handleTreeCheck} treeData={treeData} />"
+    ]
+  },
+  "Alert": {
+    "prefix": "antdAlert",
+    "body": ["<Alert message=\"${1:Success Text}\" type=\"${2:success}\" />"]
+  },
+  "Drawer": {
+    "prefix": "antdDrawer",
+    "body": [
+      "<Drawer",
+      "  title=\"${1:Drawer with extra actions}\"",
+      "  width={600}",
+      "  onClose={handleDrawerClose}",
+      "  visible={visible}",
+      "  extra={",
+      "    <Space>",
+      "      <Button onClick={handleDrawerClose}>Cancel</Button>",
+      "      <Button type=\"primary\" onClick={handleDrawerClose}>",
+      "        OK",
+      "      </Button>",
+      "    </Space>",
+      "  }",
+      ">",
+      "  <p>Some contents...</p>",
+      "  <p>Some contents...</p>",
+      "  <p>Some contents...</p>",
+      "</Drawer>"
+    ]
+  },
+  "Modal": {
+    "prefix": "antdModal",
+    "body": [
+      "<Modal title=\"${1:Basic Modal}\" visible={visible} onOk={handleModalOk} onCancel={handleModalCancel}>",
+      "  <p>Some contents...</p>",
+      "  <p>Some contents...</p>",
+      "  <p>Some contents...</p>",
+      "</Modal>"
+    ]
+  },
+  "notification": {
+    "prefix": "antdNotification",
+    "body": [
+      "notification.${1:open}({",
+      "  message: '${2:Notification Title}',",
+      "  description:",
+      "    '${3:This is the content of the notification.}',",
+      "});"
+    ]
+  },
+  "Popconfirm": {
+    "prefix": "antdPopconfirm",
+    "body": [
+      "<Popconfirm",
+      "  title=\"是否确认删除?\"",
+      "  onConfirm={confirm}",
+      ">",
+      "  <a href=\"#\">Delete</a>",
+      "</Popconfirm>"
+    ]
+  },
+  "Progress": {
+    "prefix": "antdProgress",
+    "body": ["<Progress percent={${1:30}} />"]
+  },
+  "Result": {
+    "prefix": "antdResult",
+    "body": [
+      "<Result",
+      "  status=\"${1:success}\"",
+      "  title=\"${2:Successfully Purchased Cloud Server ECS!}\"",
+      "  subTitle=\"${3:Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait.}\"",
+      "/>"
+    ]
+  },
+  "Skeleton": {
+    "prefix": "antdSkeleton",
+    "body": ["<Skeleton active />"]
+  },
+  "Spin": {
+    "prefix": "antdSpin",
+    "body": ["<Spin spinning={${1:true}}>", "  $2", "</Spin>"]
+  },
+  "Anchor": {
+    "prefix": "antdAnchor",
+    "body": [
+      "const { Link } = Anchor;",
+      "",
+      "<Anchor>",
+      "  <Link href=\"#components-anchor-demo-basic\" title=\"Basic demo\" />",
+      "  <Link href=\"#components-anchor-demo-static\" title=\"Static demo\" />",
+      "</Anchor>"
+    ]
+  },
+  "BackTop": {
+    "prefix": "antdBackTop",
+    "body": ["<BackTop />"]
+  }
+}
