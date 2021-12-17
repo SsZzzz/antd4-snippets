@@ -3,7 +3,7 @@
   "displayName": "antd4 snippets",
   "description": "antd4 and dva snippets",
   "version": "1.0.0",
-  "publisher": "mendia.su",
+  "publisher": "mendiasu",
   "engines": {
     "vscode": "^1.63.0"
   },
