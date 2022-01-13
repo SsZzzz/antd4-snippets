@@ -191,7 +191,12 @@
       "function handleRangePickerChange(date, dateString) {",
       "  console.log(date, dateString);",
       "}",
-      "<RangePicker onChange={handleRangePickerChange} />"
+      "<RangePicker",
+      "  onChange={handleRangePickerChange}",
+      "  showTime={{",
+      "    defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],",
+      "  }}",
+      "/>"
     ]
   },
   "Form": {

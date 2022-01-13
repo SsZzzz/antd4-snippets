@@ -2,7 +2,7 @@
   "name": "antd4-snippets",
   "displayName": "antd4 snippets",
   "description": "antd4 and dva snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "mendiasu",
   "engines": {
     "vscode": "^1.63.0"
